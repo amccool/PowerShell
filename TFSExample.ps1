@@ -1,13 +1,14 @@
-﻿param (
-    [string]$tfsServer = "TFSServerName",
-    [string]$tfsLocation = "$/TFS/Project",
-    [string]$localFolder ="c:\scripts",
+param (
+    [string]$tfsServer = "http://tfstest.rauland.com:8080/tfs/DefaultCollection",
+    [string]$tfsLocation = "$\SoftwareEng\Enterprise\dev",
+    [string]$localFolder ="C:\temp\source\dev",
     [string]$file,
     [string]$checkInComments = "Checked in from PowerShell"
 )
-$clientDll = "C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\Microsoft.TeamFoundation.Client.dll"
-$versionControlClientDll = "C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\Microsoft.TeamFoundation.VersionControl.Client.dll"
-$versionControlCommonDll = "C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\Microsoft.TeamFoundation.VersionControl.Common.dll"
+$clientDll = "C:\Program Files (x86)\Microsoft Team Foundation Server 2015 Power Tools\Microsoft.TeamFoundation.Client.dll"
+$versionControlClientDll = "C:\Program Files (x86)\Microsoft Team Foundation Server 2015 Power Tools\Microsoft.TeamFoundation.VersionControl.Client.dll"
+$versionControlCommonDll = "C:\Program Files (x86)\Microsoft Team Foundation Server 2015 Power Tools\Microsoft.TeamFoundation.VersionControl.Common.dll"
+
 
 #Load the Assemblies
 [Reflection.Assembly]::LoadFrom($clientDll)
